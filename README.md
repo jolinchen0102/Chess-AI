@@ -13,7 +13,7 @@ Object Oriented approach is taken by the game implementation. Five classes are d
 
 Piece is actually a summary of 6 classes, each represents a different type of pieces of the chess game (Pawn, Knight, Bishop etc.). It captures all the information needed to describe the 6 different types of piece of the chess game. Each class has a member function `moves()` to define the movement behavior for each of the different piece.
 
-Board captures information needed to describe a game at a certain time point, an instance of Board is used to start and control the game. Firstly, it initializes a $8 \times 8$ list of type char to represent the board of the game.
+Board captures information needed to describe a game at a certain time point, an instance of Board is used to start and control the game. Firstly, it initializes a 8 * 8​ list of type char to represent the board of the game.
 
 The pre-defined search depth is set to 3. Secondly, the class defines member functions make `move()` and make move `ai()` to move the chess piece and update the current board for the user and AI agent respectively. Notice that the member function recommend move() calls the successor moves generator and set to `self.state`, then returns the Minimax solution
 
@@ -27,11 +27,11 @@ AI is a class defined for the searching strategy. Methods such as evalu- ation f
 
 ## Base Line: Greedy Expansion
 
-Each pieces are assigned with a value indicating their importance: $pawn=1, knight=5, bishop=5, rook=10, queen=50, king=500$. Greedy search tree expansion utilizes the class TreeNode to generates all possible moves of the current game state and store in its children list. The detailed implementation is listed below:
+Each pieces are assigned with a value indicating their importance: pawn=1, knight=5, bishop=5, rook=10, queen=50, king=500​. Greedy search tree expansion utilizes the class TreeNode to generates all possible moves of the current game state and store in its children list. The detailed implementation is listed below:
 
 1. Initialize the root node of the tree by constructing a TreeNode with the value [self.chessboard] and set it to `self.initialstate`
 
-2. Initialize depth = 1, construct a loop to keep searching and calling func- tion all possible `moves()` in the class RulesEnforcer to generate all possible moves for each pieces and append to the children list. Calling function make hypothetical `move()` to obtain the starting and ending coordinates for the leaf nodes. Iterate until $depth > predefined depth$
+2. Initialize depth = 1, construct a loop to keep searching and calling func- tion all possible `moves()` in the class RulesEnforcer to generate all possible moves for each pieces and append to the children list. Calling function make hypothetical `move()` to obtain the starting and ending coordinates for the leaf nodes. Iterate until depth > predefined depth​
 
 3. Sets the generated game states (list of class TreeNode) to self.initial state in order to facilitate minimax search
 
