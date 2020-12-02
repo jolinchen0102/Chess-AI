@@ -37,7 +37,7 @@ Each pieces are assigned with a value indicating their importance: pawn=1, knigh
 
    
 
-##  Minimax with $α − β\ Pruning$
+##  Minimax with α − β Pruning​
 
 I extend the greedy game tree to a certain depth by using the standard Minimax search policy. An evaluation function of the state is defined. Apparently simply adding the value of each pieces is not enough, since even the same piece will exhibit different value at different positions. One example is that once a pawn gets closer to the opponent field, it becomes much more important because the probability of castling increase according to the game rule. Other rules are illustrated as follows:
 
